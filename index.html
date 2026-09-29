@@ -1,0 +1,2401 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Екатерина Скакун — Portfolio</title>
+
+    <meta name="description"
+          content="Личное портфолио Екатерины Скакун — опыт работы, образование, навыки, проекты, творчество и интересы.">
+
+    <style>
+
+        /* =========================================================
+           ОСНОВНЫЕ НАСТРОЙКИ
+        ========================================================= */
+
+        :root {
+            --bg: #0b100e;
+            --bg-light: #111815;
+            --card: rgba(24, 32, 28, 0.82);
+            --card-hover: rgba(31, 42, 36, 0.95);
+
+            --green: #263b31;
+            --green-light: #3b5647;
+
+            --gold: #c4a56a;
+            --gold-light: #dfc892;
+
+            --cream: #f2eee5;
+            --white: #ffffff;
+
+            --text: #eeeae1;
+            --muted: #9ba59e;
+
+            --border: rgba(196, 165, 106, 0.18);
+
+            --radius: 24px;
+            --max-width: 1180px;
+        }
+
+
+        /* =========================================================
+           RESET
+        ========================================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background:
+                radial-gradient(
+                    circle at 80% 0%,
+                    rgba(59, 86, 71, 0.35),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 10% 50%,
+                    rgba(196, 165, 106, 0.06),
+                    transparent 25%
+                ),
+                var(--bg);
+
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+
+        /* =========================================================
+           ОБЩИЕ КЛАССЫ
+        ========================================================= */
+
+        .container {
+            width: min(100% - 40px, var(--max-width));
+            margin: auto;
+        }
+
+        section {
+            padding: 110px 0;
+            position: relative;
+        }
+
+        .section-label {
+            color: var(--gold-light);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 12px;
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: clamp(38px, 5vw, 64px);
+            line-height: 1;
+            letter-spacing: -2px;
+            margin-bottom: 20px;
+        }
+
+        .section-description {
+            color: var(--muted);
+            max-width: 650px;
+            font-size: 17px;
+        }
+
+        .section-header {
+            margin-bottom: 55px;
+        }
+
+
+        /* =========================================================
+           NAVIGATION
+        ========================================================= */
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
+            background: rgba(11, 16, 14, 0.75);
+            backdrop-filter: blur(18px);
+
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .nav-inner {
+            height: 75px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 19px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: var(--gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 27px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            font-size: 13px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold-light);
+        }
+
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .hero {
+            min-height: 100vh;
+
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+
+            align-items: center;
+
+            gap: 70px;
+
+            padding-top: 120px;
+        }
+
+        .hero-label {
+            color: var(--gold-light);
+
+            text-transform: uppercase;
+            letter-spacing: 5px;
+
+            font-size: 12px;
+
+            margin-bottom: 22px;
+        }
+
+        .hero h1 {
+            font-size: clamp(55px, 8vw, 105px);
+            line-height: 0.9;
+
+            letter-spacing: -6px;
+
+            margin-bottom: 30px;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+        }
+
+        .hero-description {
+            color: var(--muted);
+
+            font-size: 18px;
+
+            max-width: 620px;
+
+            margin-bottom: 35px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 13px;
+        }
+
+        .button {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            padding: 13px 22px;
+
+            border-radius: 100px;
+
+            border: 1px solid var(--border);
+
+            background: rgba(255,255,255,0.03);
+
+            transition: 0.3s;
+
+            font-size: 14px;
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+            border-color: var(--gold);
+        }
+
+        .button-primary {
+            background: var(--gold);
+            color: #11100c;
+            border-color: var(--gold);
+        }
+
+        .button-primary:hover {
+            background: var(--gold-light);
+        }
+
+
+        /* =========================================================
+           HERO PHOTO
+        ========================================================= */
+
+        .hero-photo {
+            height: 620px;
+
+            border-radius: 35px;
+
+            overflow: hidden;
+
+            position: relative;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #304438,
+                    #121915
+                );
+
+            border: 1px solid var(--border);
+
+            box-shadow:
+                0 30px 100px rgba(0,0,0,0.45);
+        }
+
+        .hero-photo img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+        }
+
+        /*
+           ПОМЕНЯЙ ЭТОТ ФАЙЛ:
+           images/main.jpg
+        */
+
+        .photo-placeholder {
+            height: 100%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: rgba(255,255,255,0.3);
+
+            letter-spacing: 5px;
+            font-size: 12px;
+        }
+
+        .hero-photo-info {
+            position: absolute;
+
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+
+            padding: 18px;
+
+            border-radius: 18px;
+
+            background: rgba(10,15,12,0.75);
+
+            backdrop-filter: blur(15px);
+
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .hero-photo-info strong {
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        .hero-photo-info span {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+
+        /* =========================================================
+           ABOUT
+        ========================================================= */
+
+        .about-grid {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+        .about-text p {
+            color: var(--muted);
+
+            margin-bottom: 18px;
+
+            font-size: 16px;
+        }
+
+        .about-facts {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 15px;
+        }
+
+        .fact {
+            padding: 25px;
+
+            border: 1px solid var(--border);
+
+            background: var(--card);
+
+            border-radius: var(--radius);
+
+            transition: 0.3s;
+        }
+
+        .fact:hover {
+            background: var(--card-hover);
+            transform: translateY(-4px);
+        }
+
+        .fact-number {
+            font-size: 32px;
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        .fact-text {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+
+        /* =========================================================
+           EXPERIENCE
+        ========================================================= */
+
+        .timeline {
+            display: grid;
+            gap: 15px;
+        }
+
+        .experience-card {
+            display: grid;
+
+            grid-template-columns: 180px 1fr;
+
+            gap: 35px;
+
+            padding: 30px;
+
+            border: 1px solid var(--border);
+
+            background: var(--card);
+
+            border-radius: var(--radius);
+
+            transition: 0.3s;
+        }
+
+        .experience-card:hover {
+            transform: translateX(5px);
+            background: var(--card-hover);
+        }
+
+        .experience-date {
+            color: var(--gold-light);
+            font-size: 13px;
+        }
+
+        .experience-title {
+            font-size: 22px;
+            margin-bottom: 3px;
+        }
+
+        .experience-company {
+            color: var(--gold);
+            font-size: 14px;
+        }
+
+        .experience-description {
+            color: var(--muted);
+            margin-top: 12px;
+        }
+
+        .experience-description li {
+            margin-bottom: 5px;
+        }
+
+
+        /* =========================================================
+           EDUCATION
+        ========================================================= */
+
+        .education-grid {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 20px;
+        }
+
+        .document-card {
+            min-height: 330px;
+
+            padding: 30px;
+
+            border-radius: var(--radius);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(42,58,48,0.9),
+                    rgba(17,23,20,0.9)
+                );
+
+            border: 1px solid var(--border);
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .document-number {
+            position: absolute;
+
+            right: 25px;
+            top: 20px;
+
+            color: rgba(255,255,255,0.12);
+
+            font-size: 70px;
+
+            font-weight: 700;
+        }
+
+        .document-card h3 {
+            font-size: 25px;
+
+            max-width: 450px;
+
+            margin: 30px 0 15px;
+        }
+
+        .document-card p {
+            color: var(--muted);
+        }
+
+        .document-link {
+            display: inline-block;
+
+            margin-top: 30px;
+
+            color: var(--gold-light);
+
+            font-size: 14px;
+        }
+
+
+        /* =========================================================
+           SKILLS
+        ========================================================= */
+
+        .skills-wrapper {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+        }
+
+        .skill {
+            padding: 13px 19px;
+
+            border-radius: 100px;
+
+            border: 1px solid var(--border);
+
+            background: var(--card);
+
+            color: var(--text);
+
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            border-color: var(--gold);
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================================================
+           PROJECTS
+        ========================================================= */
+
+        .projects-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 18px;
+        }
+
+        .project-card {
+            min-height: 280px;
+
+            padding: 28px;
+
+            border-radius: var(--radius);
+
+            border: 1px solid var(--border);
+
+            background: var(--card);
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: space-between;
+
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-7px);
+
+            background: var(--card-hover);
+        }
+
+        .project-number {
+            color: var(--gold);
+
+            font-size: 12px;
+
+            letter-spacing: 2px;
+        }
+
+        .project-card h3 {
+            font-size: 23px;
+
+            margin: 25px 0 10px;
+        }
+
+        .project-card p {
+            color: var(--muted);
+        }
+
+        .project-tech {
+            color: var(--gold-light);
+
+            font-size: 12px;
+
+            margin-top: 20px;
+        }
+
+
+        /* =========================================================
+           CERTIFICATES
+        ========================================================= */
+
+        .certificates {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 18px;
+        }
+
+        .certificate {
+            aspect-ratio: 4 / 3;
+
+            border-radius: 20px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #26382e,
+                    #131a17
+                );
+
+            border: 1px solid var(--border);
+
+            overflow: hidden;
+
+            position: relative;
+        }
+
+        .certificate img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .certificate-placeholder {
+            height: 100%;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            color: rgba(255,255,255,0.3);
+
+            font-size: 12px;
+
+            letter-spacing: 3px;
+        }
+
+
+        /* =========================================================
+           INTERESTS
+        ========================================================= */
+
+        .interests-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 15px;
+        }
+
+        .interest-card {
+            padding: 28px;
+
+            border-radius: var(--radius);
+
+            border: 1px solid var(--border);
+
+            background: var(--card);
+
+            transition: 0.3s;
+        }
+
+        .interest-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .interest-icon {
+            font-size: 30px;
+
+            margin-bottom: 18px;
+        }
+
+        .interest-card h3 {
+            margin-bottom: 8px;
+        }
+
+        .interest-card p {
+            color: var(--muted);
+
+            font-size: 14px;
+        }
+
+
+        /* =========================================================
+           BOOKS
+        ========================================================= */
+
+        .creative-section {
+            display: grid;
+
+            grid-template-columns: 0.8fr 1.2fr;
+
+            gap: 50px;
+
+            align-items: center;
+        }
+
+        .creative-title {
+            font-size: clamp(45px, 6vw, 75px);
+
+            line-height: 0.95;
+
+            letter-spacing: -4px;
+        }
+
+        .creative-title span {
+            color: var(--gold);
+        }
+
+        .creative-text {
+            color: var(--muted);
+
+            font-size: 17px;
+        }
+
+        .creative-list {
+            margin-top: 25px;
+
+            display: grid;
+
+            gap: 10px;
+        }
+
+        .creative-item {
+            padding: 18px 20px;
+
+            border-radius: 16px;
+
+            border: 1px solid var(--border);
+
+            background: var(--card);
+        }
+
+
+        /* =========================================================
+           GALLERY
+        ========================================================= */
+
+        .gallery {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 14px;
+        }
+
+        .gallery-item {
+            aspect-ratio: 1;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #30463a,
+                    #151c18
+                );
+
+            border: 1px solid var(--border);
+
+            transition: 0.4s;
+        }
+
+        .gallery-item:nth-child(1),
+        .gallery-item:nth-child(5) {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.06);
+        }
+
+        .gallery-placeholder {
+            height: 100%;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            color: rgba(255,255,255,0.3);
+
+            font-size: 11px;
+
+            letter-spacing: 3px;
+        }
+
+
+        /* =========================================================
+           CONTACTS
+        ========================================================= */
+
+        .contact-box {
+            padding: 60px;
+
+            border-radius: 35px;
+
+            background:
+                radial-gradient(
+                    circle at 100% 0,
+                    rgba(196,165,106,0.16),
+                    transparent 40%
+                ),
+                linear-gradient(
+                    145deg,
+                    #1d2a23,
+                    #111713
+                );
+
+            border: 1px solid var(--border);
+
+            text-align: center;
+        }
+
+        .contact-box h2 {
+            font-size: clamp(40px, 6vw, 70px);
+
+            line-height: 1;
+
+            margin-bottom: 20px;
+        }
+
+        .contact-box p {
+            color: var(--muted);
+
+            max-width: 600px;
+
+            margin: 0 auto 30px;
+        }
+
+        .contact-links {
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+            padding: 35px 0;
+
+            border-top: 1px solid var(--border);
+
+            color: var(--muted);
+
+            font-size: 13px;
+
+            text-align: center;
+        }
+
+
+        /* =========================================================
+           АНИМАЦИЯ
+        ========================================================= */
+
+        @keyframes fadeUp {
+
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+        .hero-content {
+            animation: fadeUp 1s ease forwards;
+        }
+
+        .hero-photo {
+            animation: fadeUp 1.2s ease forwards;
+        }
+
+
+        /* =========================================================
+           АДАПТАЦИЯ ПОД ТЕЛЕФОН
+        ========================================================= */
+
+        @media (max-width: 950px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+
+                padding-top: 130px;
+            }
+
+            .hero-photo {
+                height: 500px;
+            }
+
+            .about-grid,
+            .creative-section {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .interests-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr 1fr;
+            }
+
+        }
+
+
+        @media (max-width: 650px) {
+
+            section {
+                padding: 75px 0;
+            }
+
+            .container {
+                width: min(100% - 28px, var(--max-width));
+            }
+
+            .hero h1 {
+                letter-spacing: -3px;
+            }
+
+            .hero-photo {
+                height: 430px;
+            }
+
+            .about-facts {
+                grid-template-columns: 1fr;
+            }
+
+            .experience-card {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .education-grid,
+            .projects-grid,
+            .certificates,
+            .interests-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .gallery-item:nth-child(1),
+            .gallery-item:nth-child(5) {
+                grid-column: span 2;
+                grid-row: span 2;
+            }
+
+            .contact-box {
+                padding: 35px 20px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     НАВИГАЦИЯ
+========================================================= -->
+
+<nav class="navbar">
+
+    <div class="container nav-inner">
+
+        <a href="#top" class="logo">
+            E<span>К</span>
+        </a>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="#about">Обо мне</a>
+            </li>
+
+            <li>
+                <a href="#experience">Опыт</a>
+            </li>
+
+            <li>
+                <a href="#education">Образование</a>
+            </li>
+
+            <li>
+                <a href="#skills">Навыки</a>
+            </li>
+
+            <li>
+                <a href="#projects">Проекты</a>
+            </li>
+
+            <li>
+                <a href="#creative">Творчество</a>
+            </li>
+
+            <li>
+                <a href="#gallery">Фото</a>
+            </li>
+
+            <li>
+                <a href="#contacts">Контакты</a>
+            </li>
+
+        </ul>
+
+    </div>
+
+</nav>
+
+
+
+<main id="top">
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section>
+
+    <div class="container hero">
+
+        <div class="hero-content">
+
+            <div class="hero-label">
+                Portfolio • Aktau • 2026
+            </div>
+
+            <h1>
+                Екатерина
+                <br>
+                <span>Скакун</span>
+            </h1>
+
+            <p class="hero-description">
+
+                Информационные системы, базы данных,
+                технологии, творчество и работа с людьми.
+
+                Открыта новым возможностям,
+                быстро обучаюсь и люблю создавать
+                что-то своё.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a href="#experience"
+                   class="button button-primary">
+
+                    Мой опыт
+
+                </a>
+
+                <a href="#contacts"
+                   class="button">
+
+                    Связаться
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!--
+            СЮДА ПОСТАВЬ СВОЮ ГЛАВНУЮ ФОТОГРАФИЮ.
+
+            Папка:
+            images
+
+            Файл:
+            main.jpg
+        -->
+
+        <div class="hero-photo">
+
+            <img src="image\photoess.jpg"
+                 alt="Екатерина Скакун"
+                 onerror="this.style.display='none';">
+
+            <div class="photo-placeholder">
+                YOUR PHOTO
+            </div>
+
+
+            <div class="hero-photo-info">
+
+                <strong>
+                    Екатерина Скакун
+                </strong>
+
+                <span>
+                    Информационные системы • творчество • развитие
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div class="section-label">
+                01 — About
+            </div>
+
+            <h2 class="section-title">
+                Немного обо мне
+            </h2>
+
+            <p class="section-description">
+                Я не хочу ограничиваться одной сферой.
+                Мне интересно развиваться, пробовать новое
+                и постепенно создавать собственный профессиональный путь.
+            </p>
+
+        </div>
+
+
+        <div class="about-grid">
+
+            <div class="about-text">
+
+                <p>
+                    Меня зовут Екатерина.
+                    Я получила среднее профессиональное образование
+                    по специальности «Информационные системы и программирование».
+                </p>
+
+                <p>
+                    За время работы я успела попробовать себя
+                    в IT, работе с базами данных, 1С, HR,
+                    администрировании, продажах, сервисе и общепите.
+                </p>
+
+                <p>
+                    Мне нравится разбираться в новых задачах,
+                    работать с людьми и одновременно развивать
+                    технические навыки.
+                </p>
+
+                <p>
+                    Помимо профессиональной деятельности,
+                    я пишу книги и стихи, интересуюсь
+                    визуальной эстетикой и бьюти-индустрией.
+                </p>
+
+            </div>
+
+
+            <div class="about-facts">
+
+                <div class="fact">
+
+                    <div class="fact-number">
+                        IT
+                    </div>
+
+                    <div class="fact-text">
+                        Информационные системы и программирование
+                    </div>
+
+                </div>
+
+
+                <div class="fact">
+
+                    <div class="fact-number">
+                        SQL
+                    </div>
+
+                    <div class="fact-text">
+                        Работа с базами данных
+                    </div>
+
+                </div>
+
+
+                <div class="fact">
+
+                    <div class="fact-number">
+                        2.5+
+                    </div>
+
+                    <div class="fact-text">
+                        Года опыта в Coffee Like
+                    </div>
+
+                </div>
+
+
+                <div class="fact">
+
+                    <div class="fact-number">
+                        ∞
+                    </div>
+
+                    <div class="fact-text">
+                        Идей для новых проектов
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     EXPERIENCE
+========================================================= -->
+
+<section id="experience">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div class="section-label">
+                02 — Experience
+            </div>
+
+            <h2 class="section-title">
+                Опыт работы
+            </h2>
+
+            <p class="section-description">
+                Разный опыт научил меня работать
+                и с технологиями, и с людьми.
+            </p>
+
+        </div>
+
+
+        <div class="timeline">
+
+
+            <div class="experience-card">
+
+                <div class="experience-date">
+                    Около 6 месяцев
+                </div>
+
+                <div>
+
+                    <h3 class="experience-title">
+                        Администратор баз данных / HR-менеджер
+                    </h3>
+
+                    <div class="experience-company">
+                        Сервисный центр
+                    </div>
+
+                    <ul class="experience-description">
+
+                        <li>
+                            Работа с базами данных.
+                        </li>
+
+                        <li>
+                            Внесение и систематизация информации.
+                        </li>
+
+                        <li>
+                            Работа с документами.
+                        </li>
+
+                        <li>
+                            HR и административные задачи.
+                        </li>
+
+                        <li>
+                            Взаимодействие с сотрудниками.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="experience-card">
+
+                <div class="experience-date">
+                    Около 2 месяцев
+                </div>
+
+                <div>
+
+                    <h3 class="experience-title">
+                        Консультант 1С
+                    </h3>
+
+                    <div class="experience-company">
+                        Строительная компания
+                    </div>
+
+                    <ul class="experience-description">
+
+                        <li>
+                            Консультирование сотрудников по работе в 1С.
+                        </li>
+
+                        <li>
+                            Помощь пользователям.
+                        </li>
+
+                        <li>
+                            Работа с документами и информацией.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="experience-card">
+
+                <div class="experience-date">
+                    Около 6 месяцев
+                </div>
+
+                <div>
+
+                    <h3 class="experience-title">
+                        Менеджер ВПЗ
+                    </h3>
+
+                    <div class="experience-company">
+                        Компания / организация
+                    </div>
+
+                    <ul class="experience-description">
+
+                        <li>
+                            Работа с клиентами.
+                        </li>
+
+                        <li>
+                            Консультирование.
+                        </li>
+
+                        <li>
+                            Обработка обращений.
+                        </li>
+
+                        <li>
+                            Административные задачи.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="experience-card">
+
+                <div class="experience-date">
+                    Около 6 месяцев
+                </div>
+
+                <div>
+
+                    <h3 class="experience-title">
+                        Младший воспитатель
+                    </h3>
+
+                    <div class="experience-company">
+                        Baby VIP
+                    </div>
+
+                    <ul class="experience-description">
+
+                        <li>
+                            Помощь воспитателю.
+                        </li>
+
+                        <li>
+                            Организация рабочего процесса.
+                        </li>
+
+                        <li>
+                            Взаимодействие с детьми и родителями.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="experience-card">
+
+                <div class="experience-date">
+                    Около 2,5 лет
+                </div>
+
+                <div>
+
+                    <h3 class="experience-title">
+                        Бариста
+                    </h3>
+
+                    <div class="experience-company">
+                        Coffee Like
+                    </div>
+
+                    <ul class="experience-description">
+
+                        <li>
+                            Обслуживание гостей.
+                        </li>
+
+                        <li>
+                            Приготовление напитков.
+                        </li>
+
+                        <li>
+                            Работа с кассой.
+                        </li>
+
+                        <li>
+                            Работа в команде.
+                        </li>
+
+                        <li>
+                            Работа в условиях высокой нагрузки.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="experience-card">
+
+                <div class="experience-date">
+                  
+                </div>
+
+                <div>
+
+                    <h3 class="experience-title">
+                        Продавец-консультант
+                    </h3>
+
+                    <div class="experience-company">
+                        Zolla
+                    </div>
+
+                    <ul class="experience-description">
+
+                        <li>
+                            Консультирование покупателей.
+                        </li>
+
+                        <li>
+                            Работа с товаром.
+                        </li>
+
+                        <li>
+                            Работа с кассой.
+                        </li>
+
+                        <li>
+                            Обслуживание клиентов.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     EDUCATION
+========================================================= -->
+
+<section id="education">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div class="section-label">
+                03 — Education
+            </div>
+
+            <h2 class="section-title">
+                Образование
+            </h2>
+
+        </div>
+
+
+        <div class="education-grid">
+
+
+            <div class="document-card">
+
+                <div class="document-number">
+                    01
+                </div>
+
+                <div class="section-label">
+                    Diploma
+                </div>
+
+                <h3>
+                    Информационные системы
+                    и программирование
+                </h3>
+
+                <p>
+                    Среднее профессиональное образование.
+                    Профильная подготовка в области программирования,
+                    баз данных и информационных систем.
+                </p>
+
+                <!--
+                    Когда добавишь фотографию диплома,
+                    можно заменить текст ниже на:
+
+                    <img src="images/diploma.jpg">
+                -->
+
+                <a href="#"
+                   class="document-link">
+
+                    Посмотреть диплом →
+
+                </a>
+
+            </div>
+
+
+
+            <div class="document-card">
+
+                <div class="document-number">
+                    02
+                </div>
+
+                <div class="section-label">
+                    Certificates
+                </div>
+
+                <h3>
+                    Сертификаты
+                    и дополнительное обучение
+                </h3>
+
+                <p>
+                    Здесь можно разместить сертификаты,
+                    курсы, достижения и дополнительные
+                    образовательные материалы.
+                </p>
+
+                <a href="#certificates"
+                   class="document-link">
+
+                    Смотреть сертификаты →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     SKILLS
+========================================================= -->
+
+<section id="skills">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div class="section-label">
+                04 — Skills
+            </div>
+
+            <h2 class="section-title">
+                Навыки
+            </h2>
+
+            <p class="section-description">
+                Технические навыки, административные компетенции
+                и опыт работы с людьми.
+            </p>
+
+        </div>
+
+
+        <div class="skills-wrapper">
+
+            <div class="skill">SQL</div>
+
+            <div class="skill">Microsoft SQL Server</div>
+
+            <div class="skill">Python</div>
+
+            <div class="skill">Delphi</div>
+
+            <div class="skill">Pascal</div>
+
+            <div class="skill">1С</div>
+
+            <div class="skill">HTML</div>
+
+            <div class="skill">JavaScript</div>
+
+            <div class="skill">C#</div>
+
+            <div class="skill">C++</div>
+
+            <div class="skill">Базы данных</div>
+
+            <div class="skill">Администрирование</div>
+
+            <div class="skill">HR</div>
+
+            <div class="skill">Продажи</div>
+
+            <div class="skill">Клиентский сервис</div>
+
+            <div class="skill">Работа в команде</div>
+
+            <div class="skill">Документооборот</div>
+
+            <div class="skill">Photoshop</div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     PROJECTS
+========================================================= -->
+
+<section id="projects">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div class="section-label">
+                05 — Projects
+            </div>
+
+            <h2 class="section-title">
+                Проекты
+            </h2>
+
+            <p class="section-description">
+                Проекты, над которыми я работала
+                или которые хочу развивать дальше.
+            </p>
+
+        </div>
+
+
+        <div class="projects-grid">
+
+
+            <div class="project-card">
+
+                <div>
+
+                    <div class="project-number">
+                        PROJECT 01
+                    </div>
+
+                    <h3>
+                        Информационная система
+                        мониторинга автотранспорта
+                    </h3>
+
+                    <p>
+                        Дипломный проект с базой данных
+                        Microsoft SQL Server и приложением
+                        на Delphi.
+                    </p>
+
+                </div>
+
+                <div class="project-tech">
+                    Delphi • SQL • MS SQL Server
+                </div>
+
+            </div>
+
+
+
+            <div class="project-card">
+
+                <div>
+
+                    <div class="project-number">
+                        PROJECT 02
+                    </div>
+
+                    <h3>
+                        Собственные digital-идеи
+                    </h3>
+
+                    <p>
+                        Интересуюсь созданием приложений,
+                        цифровых сервисов и проектов,
+                        которые могут решать реальные задачи.
+                    </p>
+
+                </div>
+
+                <div class="project-tech">
+                    Python • UX/UI • идеи
+                </div>
+
+            </div>
+
+
+
+            <div class="project-card">
+
+                <div>
+
+                    <div class="project-number">
+                        PROJECT 03
+                    </div>
+
+                    <h3>
+                        Творческие проекты
+                    </h3>
+
+                    <p>
+                        Работа над собственными книгами,
+                        стихами и визуальными проектами.
+                    </p>
+
+                </div>
+
+                <div class="project-tech">
+                    Writing • Creativity • Design
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CERTIFICATES
+========================================================= -->
+
+<section id="certificates">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div class="section-label">
+                06 — Certificates
+            </div>
+
+            <h2 class="section-title">
+                Сертификаты
+            </h2>
+
+            <p class="section-description">
+                Здесь будут размещаться мои сертификаты,
+                курсы и дополнительные достижения.
+            </p>
+
+        </div>
+
+
+        <div class="certificates">
+
+
+            <!--
+                ЗАМЕНИ:
+
+                certificate1.jpg
+                certificate2.jpg
+                certificate3.jpg
+
+                на свои фотографии сертификатов.
+            -->
+
+
+            <div class="certificate">
+
+                <img src="image\photo_2024-05-22_12-32-56 (2).jpg"
+                     alt="Сертификат 1"
+                     onerror="this.style.display='none';">
+
+                <div class="certificate-placeholder">
+                    CERTIFICATE 01
+                </div>
+
+            </div>
+
+
+            <div class="certificate">
+
+                <img src="image\photo_2024-05-15_17-36-33.jpg"
+                     alt="Сертификат 2"
+                     onerror="this.style.display='none';">
+
+                <div class="certificate-placeholder">
+                    CERTIFICATE 02
+                </div>
+
+            </div>
+
+
+            <div class="certificate">
+
+                <img src="image\photo_2024-05-15_17-36-33 (2).jpg"
+                     alt="Сертификат 3"
+                     onerror="this.style.display='none';">
+
+                <div class="certificate-placeholder">
+                    CERTIFICATE 03
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CREATIVE
+========================================================= -->
+
+<section id="creative">
+
+    <div class="container">
+
+        <div class="creative-section">
+
+
+            <div>
+
+                <div class="section-label">
+                    07 — Creative side
+                </div>
+
+                <h2 class="creative-title">
+
+                    Я создаю
+                    <br>
+
+                    <span>истории.</span>
+
+                </h2>
+
+            </div>
+
+
+            <div>
+
+                <p class="creative-text">
+
+                    Работа - не единственная часть моей жизни.
+                    Мне нравится писать, придумывать истории,
+                    наблюдать за людьми и превращать мысли
+                    и эмоции в текст.
+
+                </p>
+
+
+                <div class="creative-list">
+
+
+                    <div class="creative-item">
+
+                        📖
+
+                        <strong>
+                            Пишу книги
+                        </strong>
+
+                        <br>
+
+                        <span style="color:var(--muted)">
+                            Работаю над собственными историями
+                            и персонажами.
+                        </span>
+
+                    </div>
+
+
+                    <div class="creative-item">
+
+                        ✒️
+
+                        <strong>
+                            Пишу стихи
+                        </strong>
+
+                        <br>
+
+                        <span style="color:var(--muted)">
+                            Поэзия как способ выражать мысли,
+                            чувства и наблюдения.
+                        </span>
+
+                    </div>
+
+
+                    <div class="creative-item">
+
+                        ✨
+
+                        <strong>
+                            Бьюти-индустрия
+                        </strong>
+
+                        <br>
+
+                        <span style="color:var(--muted)">
+                            Интересуюсь красотой, эстетикой,
+                            трендами и развитием beauty-проектов.
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     INTERESTS
+========================================================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div class="section-label">
+                08 — Interests
+            </div>
+
+            <h2 class="section-title">
+                Что мне интересно
+            </h2>
+
+        </div>
+
+
+        <div class="interests-grid">
+
+
+            <div class="interest-card">
+
+                <div class="interest-icon">
+                    💻
+                </div>
+
+                <h3>
+                    Технологии
+                </h3>
+
+                <p>
+                    Программирование, базы данных,
+                    приложения и новые digital-инструменты.
+                </p>
+
+            </div>
+
+
+            <div class="interest-card">
+
+                <div class="interest-icon">
+                    📚
+                </div>
+
+                <h3>
+                    Литература
+                </h3>
+
+                <p>
+                    Книги, истории, персонажи,
+                    психология отношений и человеческие характеры.
+                </p>
+
+            </div>
+
+
+            <div class="interest-card">
+
+                <div class="interest-icon">
+                    💄
+                </div>
+
+                <h3>
+                    Beauty
+                </h3>
+
+                <p>
+                    Бьюти-индустрия, эстетика,
+                    уход, визуальный стиль и тренды.
+                </p>
+
+            </div>
+
+
+            <div class="interest-card">
+
+                <div class="interest-icon">
+                    🎨
+                </div>
+
+                <h3>
+                    Визуал
+                </h3>
+
+                <p>
+                    Дизайн, фотографии, красивые интерфейсы
+                    и создание визуального контента.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     GALLERY
+========================================================= -->
+
+<section id="gallery">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div class="section-label">
+                09 — Gallery
+            </div>
+
+            <h2 class="section-title">
+                Мой фотоальбом
+            </h2>
+
+            <p class="section-description">
+                Личные фотографии, проекты,
+                рабочие моменты и всё,
+                что хочется сохранить здесь.
+            </p>
+
+        </div>
+
+
+        <div class="gallery">
+
+
+            <!--
+
+                ВСТАВЛЯЙ СЮДА СВОИ ФОТОГРАФИИ.
+
+                Например:
+
+                <img src="image\photoess.jpg">
+
+            -->
+
+
+            <div class="gallery-item">
+
+                <img src="image\photoess.jpg"
+                     alt="Фото 1"
+                     onerror="this.style.display='none';">
+
+                <div class="gallery-placeholder">
+                    PHOTO 01
+                </div>
+
+            </div>
+
+
+            <div class="gallery-item">
+
+                <img src="image\photo_5395342444586989948_w.jpg"
+                     alt="Фото 2"
+                     onerror="this.style.display='none';">
+
+                <div class="gallery-placeholder">
+                    PHOTO 02
+                </div>
+
+            </div>
+
+
+            <div class="gallery-item">
+
+                <img src="image\photo_5323795659603254729_y.jpg"
+                     alt="Фото 3"
+                     onerror="this.style.display='none';">
+
+                <div class="gallery-placeholder">
+                    PHOTO 03
+                </div>
+
+            </div>
+
+
+            <div class="gallery-item">
+
+                <img src="image\photo_5393248459051626567_w.jpg"
+                     alt="Фото 4"
+                     onerror="this.style.display='none';">
+
+                <div class="gallery-placeholder">
+                    PHOTO 04
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CONTACTS
+========================================================= -->
+
+<section id="contacts">
+
+    <div class="container">
+
+        <div class="contact-box">
+
+            <div class="section-label">
+                10 — Contact
+            </div>
+
+            <h2>
+                Давайте знакомиться.
+            </h2>
+
+            <p>
+
+                Если вы ищете сотрудника, который готов
+                учиться, развиваться и брать на себя новые задачи,
+                буду рада обсудить сотрудничество.
+
+            </p>
+
+
+            <div class="contact-links">
+
+
+                <!--
+                    ЗАМЕНИТЕ КОНТАКТЫ НА СВОИ.
+                -->
+
+
+                <a href="tel:+77076532791"
+                   class="button button-primary">
+
+                    📞 Телефон
+
+                </a>
+
+
+                <a href="mailto:kskakun383@gmail.com"
+                   class="button">
+
+                    ✉ E-mail
+
+                </a>
+
+
+                <a href="https://t.me/kathrin_ladyyyy"
+                   class="button"
+                   target="_blank">
+
+                    Telegram
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <div class="container">
+
+        Екатерина Скакун © 2026
+
+        <br>
+
+        <span>
+            Portfolio • 
+        </span>
+
+    </div>
+
+</footer>
+
+
+
+</body>
+</html>
